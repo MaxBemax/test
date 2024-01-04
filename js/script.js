@@ -1,37 +1,33 @@
 'use strict';
-// let b;
 
-// if (b) {
-// 	console.log('Nice shot!');
-// } else {
-// 	console.log('You missed!');
+// const hamburger = true,
+// 	fries = false;
+
+// if (hamburger && fries) {
+// 	console.log('I am full');
 // }
 
-// const num = 50;
+//  console.log((hamburger && fries));
 
-// if (num < 49) {
-// 	console.log('Error');
-// } else if (num > 100) {
-// 	console.log('Too much');
-// } else {
-// 	console.log('finally');
-// }
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
 
-// (num === 49) ? console.log('ok!') : console.log('Error');
+if (hamburger || cola || fries === 3 || nuggets) {
+	console.log('All people satisfied');
+} 
 
-const num = 50;
 
-switch (num) {
-	case 49:
-	console.log('false');
-		break;
-	case 100:
-		console.log('false');
-		break;
-	case 50:
-		console.log('true');
-		break;
-	default:
-		console.log('next time');
-		break;
-}
+// console.log(hamburger === 3 && (cola === 2 || fries === 3) && nuggets);
+
+// let alexReport, steveReport, danReport = 'done', lisaReport;
+
+// console.log(alexReport || steveReport || danReport || lisaReport);
+
+console.log(NaN || null || !3 || undefined || 5);
+
+console.log(NaN || null && !3 && undefined || 5);
+
+console.log(5 === 5 && 3 > 1 || 5);
+
