@@ -1,53 +1,59 @@
 'use strict';
-// function firstTask() {
-// 	for (let i = 5; i < 11; i++) {
-// 		console.log(i);
-// 	}
-// }
-// firstTask();
 
-// function secondTask() {
-// 	for (let i = 20; 10 <= i ; i--) {
-// 		if (i == 13) break;
-// 		console.log(i);
-// 	}
-// }
-// secondTask();
+function firstTask() {
+	const arr = [3, 5, 8, 16, 20, 23, 50];
+	const result = [];
 
-// function thirdTask() {
-// 	for (let i = 2 ; i <= 10; i++) {
-// 		if (i % 2 === 0) {
-// 			console.log(i);
-// 		}
-// 	}
-// }
-// thirdTask();
+	for (let i = 0; i < arr.length; i++) {
+		result[i] = arr[i];
+		console.log(result);
+	}
 
+	
+	return result;
+}
+firstTask();
 
-function fourthTask() {
-	let i = 2;
+function secondTask() {
+	const data = [5, 10, 'Shopping', 20, 'Homewerk'];
 
-	while (i <= 16) {
-		if (i % 2 === 0) {
-			i++;
-			continue;
+	for (let i = 0; i < 5; i++) {
+		if (typeof (data[i]) === 'number') {
+			data[i] = data[i] * 2;
 		} else {
-			console.log(i);
+			data[i] = `${data[i]} - done`;
 		}
-		i++;
 	}
+	console.log(data);
+	return data;
 }
-fourthTask();
+secondTask();
 
-function fifthTask() {
-	const arrayOfNumbers = [];
+function thirdTask() {
+	const data = [5, 10, 'Shopping', 20, 'Homewerk'];
+	const result = [];
 
-	for (let i = 5; i <= 10; i++) {
-		arrayOfNumbers[i] = i;
+	for (let i = 1; i <= data.length; i++) {
+		result[i - 1] = data[data.length - i];
 	}
-	
-	console.log(arrayOfNumbers);
-	
-	return arrayOfNumbers;
+
+	console.log(result);
+	return result;
 }
-fifthTask();
+thirdTask();
+
+const lines = 5;
+let result = ' ';
+
+for (let i = 0; i <= lines; i++) {
+	for (let j = 0; j < lines - i; j++) {
+		result += ' ';
+	}
+	for (let j = 0; j < 2 * i + 1; j++) {
+		result += '*';
+	}
+	result += '\n';
+}
+console.log(result);
+
+
