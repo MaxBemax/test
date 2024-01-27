@@ -1,59 +1,37 @@
 'use strict';
+const numberOfFilms = +prompt('Скільки фльмів вже продивились?', '');
 
-function firstTask() {
-	const arr = [3, 5, 8, 16, 20, 23, 50];
-	const result = [];
+alert(`Ви продивились ${ numberOfFilms} фільмів`);
 
-	for (let i = 0; i < arr.length; i++) {
-		result[i] = arr[i];
-		console.log(result);
-	}
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
 
+for (let i = 0; i < 2; i++) {
+	const a = prompt('Один із останніх фільмів які продивилися?', ''),
+		b = prompt('Яку оцінку поставите?', '');
 	
-	return result;
-}
-firstTask();
-
-function secondTask() {
-	const data = [5, 10, 'Shopping', 20, 'Homewerk'];
-
-	for (let i = 0; i < 5; i++) {
-		if (typeof (data[i]) === 'number') {
-			data[i] = data[i] * 2;
-		} else {
-			data[i] = `${data[i]} - done`;
-		}
+	if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+		personalMovieDB.movies[a] = b;
+		console.log('done');
+	} else {
+		console.log('error');
+		i--;
 	}
-	console.log(data);
-	return data;
 }
-secondTask();
 
-function thirdTask() {
-	const data = [5, 10, 'Shopping', 20, 'Homewerk'];
-	const result = [];
-
-	for (let i = 1; i <= data.length; i++) {
-		result[i - 1] = data[data.length - i];
-	}
-
-	console.log(result);
-	return result;
+if (personalMovieDB.count < 10) {
+	console.log('Watched very few films!');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+	console.log('You classic viewer!');
+} else if (personalMovieDB.count >= 30) {
+	console.log('You movie fan!!!');
+} else {
+	console.log('Error!');
 }
-thirdTask();
 
-const lines = 5;
-let result = ' ';
-
-for (let i = 0; i <= lines; i++) {
-	for (let j = 0; j < lines - i; j++) {
-		result += ' ';
-	}
-	for (let j = 0; j < 2 * i + 1; j++) {
-		result += '*';
-	}
-	result += '\n';
-}
-console.log(result);
-
-
+console.log(personalMovieDB);
