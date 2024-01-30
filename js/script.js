@@ -1,37 +1,34 @@
 'use strict';
-const numberOfFilms = +prompt('Скільки фльмів вже продивились?', '');
+let num = 10;
 
-alert(`Ви продивились ${ numberOfFilms} фільмів`);
+function showFirstMessage(text) {
+	console.log(text);
+	num = 20;
+	console.log(num);
+	return num;
+}
+showFirstMessage('Hello World!');
 
-const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
+// function calc(a, b) {
+// 	return (a + b);
+// }
+
+// console.log(calc(4, 3));
+// console.log(calc(6, 3));
+// console.log(calc(8, 7));
+
+function ret() {
+	let num = 50;
+
+
+	return num;
+}
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function () {
+	console.log('Hello');
 };
+logger();
 
-for (let i = 0; i < 2; i++) {
-	const a = prompt('Один із останніх фільмів які продивилися?', ''),
-		b = prompt('Яку оцінку поставите?', '');
-	
-	if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-		personalMovieDB.movies[a] = b;
-		console.log('done');
-	} else {
-		console.log('error');
-		i--;
-	}
-}
-
-if (personalMovieDB.count < 10) {
-	console.log('Watched very few films!');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-	console.log('You classic viewer!');
-} else if (personalMovieDB.count >= 30) {
-	console.log('You movie fan!!!');
-} else {
-	console.log('Error!');
-}
-
-console.log(personalMovieDB);
+const calc = (a, b) => a + b;
