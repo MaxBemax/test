@@ -1,14 +1,16 @@
 'use strict';
 
-function makeCounter() {
-	let count = 0;
+let str = 'test';
+// const arr = [1, 2, 3];
 
-	return function () {
-		return count++;
-	};
-}
-let counter = makeCounter();
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
+console.log(str[2] = 'd');
+console.log(str);
+
+const fruit = 'Some fruit';
+
+console.log(fruit.indexOf('q'));
+console.log(fruit.indexOf('u'));
+
+let logg = 'Hello world!';
+
+console.log(logg.slice(11 , ));
