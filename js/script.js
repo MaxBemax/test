@@ -1,15 +1,33 @@
 'use strict';
 
-function getCoupeNumber(seatNumber) {
-	if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
-		return 'Помилка! Перевірте правельність введення номера місця';
-	} else if (seatNumber === 0 || seatNumber > 36) {
-		return 'Таких місць в цьому вагоні не існує';
+function getTimeFromminutes(minutesTotal) {
+	if (minutesTotal > 600 || minutesTotal < 0 || typeof (minutesTotal) !== 'number' || !Number.isInteger(minutesTotal)) {
+		return 'Помилка! Перевірте введенні данні';
 	}
-   
-	return Math.ceil(seatNumber / 4);
-}
-getCoupeNumber(13);
 
+	const hours = Math.trunc(minutesTotal / 60);
+	const minutes = minutesTotal % 60;
+	
+	let hoursStr = '';
+
+	switch (hours) {
+	case 0:
+		hoursStr = 'годин';
+		break;
+	case 1:
+		hoursStr = 'година';
+		break;
+	case 2:
+	case 3:
+	case 4:
+		hoursStr = 'години';
+		break;
+	default:
+		hoursStr = 'годин';	
+	}
+
+	return `Це ${hours} ${hoursStr} та ${minutes} хвилин`;
+}
+getTimeFromminutes(38);
 
 
