@@ -1,26 +1,28 @@
 'use strict';
 
-function first() {
-	// do something
-	setTimeout(() => {
-		console.log(1);
-	}, 500);
+const options = {
+	name: 'test',
+	width: 1024,
+	height: 1024,
+	color: {
+		border: 'black',
+		bg : 'red'
+	}
+};
+
+// console.log(options['color']['bg']);
+// delete options.width;
+// console.log(options);
+let counter = 0;
+for (let key in options) {
+	if (typeof (options[key]) === 'object') {
+		for (let i in options[key]) {
+			console.log(`Властивість ${i} має значення ${options[key][i]}`);
+		}
+	} else {
+		console.log(`Властивість ${key} має значення ${options[key]}`);
+	}
+	counter++;
 }
 
-function second() {
-	console.log(2);
-}
-
-first();
-second();
-
-function learnJS(lang, callback) {
-	console.log(`I learn: ${lang}`);
-	callback();
-}
-
-function done() {
-	console.log('I passed this lesson!');
-}
-
-learnJS('JavaScript', done);
+console.log(counter);
