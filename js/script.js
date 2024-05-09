@@ -1,31 +1,26 @@
 'use strict';
-function fib(pI) {
-	if (typeof (pI) !== 'number' || pI < 0 || !Number.isInteger(pI)) {
-		console.log('');
-		return '';
-	}
 
-	let result = '';
-	let first = 0;
-	let second = 1;
-
-	for (let i = 0; i < pI; i++) {
-		if (i + 1 === pI) {
-			result += `${first}`;
-			// Без пробела в конце
-		} else {
-			result += `${first} `;
-		}
-
-		let third = first + second;
-		first = second;
-		second = third;
-	}
-
-	console.log(result);
-	return result;
+function first() {
+	// do something
+	setTimeout(() => {
+		console.log(1);
+	}, 500);
 }
-fib(7);
 
+function second() {
+	console.log(2);
+}
 
+first();
+second();
 
+function learnJS(lang, callback) {
+	console.log(`I learn: ${lang}`);
+	callback();
+}
+
+function done() {
+	console.log('I passed this lesson!');
+}
+
+learnJS('JavaScript', done);
