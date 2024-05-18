@@ -1,57 +1,31 @@
 'use strict';
+// const arr = [5, 28, 9, 16, 12];
 
-const list = {
-	nickname: 'meal',
-	potatoes: 150,
-	tomatoes: 50,
-	pork: {
-		meat: 5,
-		fat: 10
-	}, 
-	fruits: {
-		watermelon: 'yellow',
-		bananas: 'green'
-	},
-	makeTest: function () {
-		console.log('Test');
-	}
-};
-console.log(Object.keys(list).length);
+// arr.sort((a, b) => a - b);
+// console.log(arr);
 
-const {meat, fat} = list.pork;
-console.log(meat, fat);
+// // function compareNum(a, b) {
+// // 	return a - b;
+// // }
 
-console.log(Object.keys(list).length);
+// const str = prompt('', '');
+// const products = str.split(', ');
+// console.log(products.join(';'));
 
-const options = {
-	name: 'test',
-	width: 1024,
-	height: 1024,
-	color: {
-		border: 'black',
-		bg : 'red'
-	}
-};
+const arrKeys = [32, 44, 25, 34, 12],
+	arrLink = [23, 15, 64, 78];
 
-console.log(options);
-
-const { border, bg } = options.color;
-console.log(border, bg);
-
-// console.log(Object.keys(options).length);
-// console.log(options['color']['bg']);
-// delete options.width;
-// console.log(options);
-// let counter = 0;
-// for (let key in options) {
-// 	if (typeof (options[key]) === 'object') {
-// 		for (let i in options[key]) {
-// 			console.log(`Властивість ${i} має значення ${options[key][i]}`);
-// 		}
-// 	} else {
-// 		console.log(`Властивість ${key} має значення ${options[key]}`);
-// 	}
-// 	counter++;
+const arrEx = arrKeys.concat(arrLink); 
+// arrKeys.sort((a, b) => a - b);
+// for (let value of arrKeys) {
+// 	console.log(value);
 // }
 
-// console.log(counter);
+// arrKeys.reverse();
+console.log(arrEx);
+
+const arr = [32, 44, 25, 34, 12];
+
+arr.splice(2, 2, 88, 66);
+
+console.log(arr);
