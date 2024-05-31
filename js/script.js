@@ -1,21 +1,48 @@
 'use strict';
 
-let a = 5,
-	b = a;
 
-b = b + 5;
+const personalPlanPeter = {
+	name: 'Peter',
+	age: '29',
+	skills: {
+		languages: ['ru', 'eng'],
+		programmingLangs: {
+			js: '20%',
+			php: '10%'
+		},
+		exp: '1 month'
+	},
+	showAgeAndLangs: function (plan) {
+		const { age } = plan;
+		const { languages } = plan.skills;
+		let str = `Мені ${age} я володію мовами: `;
+		
+		languages.forEach(function (lang) {
+			str += `${lang.toUpperCase()} `;
+		});
 
-console.log(b);
-console.log(a);
-
-const obj = {
-	a: 1,
-	b: 2
+		return str;
+	}
+	
 };
 
-const copy = obj;
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
 
-copy.a = 10;
+function showExperience(plan) {
+	const { exp } = plan.skills;
+	return exp;
+}
 
-console.log(copy);
-console.log(obj);
+showExperience(personalPlanPeter);
+console.log(showExperience(personalPlanPeter));
+
+function showProgrammingLangs(plan) {
+	let str = '';
+	const { programmingLangs } = plan.skills;
+	for (let key in programmingLangs) {
+		str += `Мова ${key} вивчена на ${programmingLangs[key]}\n`;
+	}
+
+	return str;
+}
+console.log(showProgrammingLangs(personalPlanPeter));
