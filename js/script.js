@@ -1,45 +1,21 @@
 'use strict';
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam' ];
 
-const shoppingMallData = {
-	shops: [
-		{
-			width: 10,
-			length: 5
-		},
-		{
-			width: 15,
-			length: 7
-		},
-		{
-			width: 20,
-			length: 5
-		},
-		{
-			width: 8,
-			length: 10
+function sortStudentsByGroups(arr) {
+	arr.sort();
+	const a = [], b = [], c = [], rest = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (i < 3) {
+			a.push(arr[i]);
+		} else if (i < 6) {
+			b.push(arr[i]);
+		} else if (i < 9) {
+			c.push(arr[i]);
+		} else {
+			rest.push(arr[i]);
 		}
-	],
-	height: 5,
-	moneyPer1m3: 30,
-	budget: 50000
-};
-
-function isBudgetEnough(data) {
-	let square = 0;
-	let volume = 0;
-
-	data.shops.forEach(shop => {
-		square += shop.width * shop.length;
-	});
-
-	volume = data.height * square;
-
-	if (data.budget - (volume * data.moneyPer1m3) >= 0) {
-		return 'Бюджету вдосталь';
-	} else {
-		return 'Бюджету мало';
-	}	
+	}
+	return [a, b, c, `Залишок студентів: ${rest.length === 0 ? '-' : rest.join(', ')}`];
 }
-
-console.log(isBudgetEnough(shoppingMallData));
-isBudgetEnough(shoppingMallData);
+console.log(sortStudentsByGroups(students));
