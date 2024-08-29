@@ -1,73 +1,57 @@
 'use strict';
 
-// let number = 5; debugger;
+const restorantData = {
+	menu: [
+		{
+			name: 'Salad Caesar',
+			price: '14$'
+		},
+		{
+			name: 'Pizza Diavola',
+			price: '9$'
+		},
+		{
+			name: 'Beefsteak',
+			price: '17$'
+		},
+		{
+			name: 'Napoleon',
+			price: '7$'
+		}
+	],
+	waitors: [
+		{name: 'Alice', age: 22}, {name: 'John', age: 24}
+	],
+	averageLunchPrice: '20$',
+	openNow: true
+};
 
-// function logNumber() {
-// 	let number = 4; debugger;
-// 	console.log(number);
-// }
+function isOpen(prop) {
+	let answer = '';
+	prop ? answer = 'Відчинено' : answer = 'Зачинено';
 
-// number = 6;
+	return answer;
+}
 
-// logNumber(); debugger;
+console.log(isOpen(restorantData.openNow));
 
-// function createCounter() {
-// 	let counter = 0;
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+	if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+		return 'Цена ниже средней';
+	} else {
+		return 'Цена выше средней';
+	}
+}
 
-// 	const myFunction = function () {
-// 		counter = counter + 1;
-// 		return counter;
-// 	};
+console.log(isAverageLunchPriceTrue(restorantData.menu[1], restorantData.menu[3], restorantData.averageLunchPrice));
 
-// 	return myFunction;
-// }
+function transferWaitors(data) {
 
-// const increment = createCounter();
-// const c1 = increment();
-// const c2 = increment();
-// const c3 = increment();
+	const copy = Object.assign({}, data);
 
-// console.log(c1, c2, c3);
+	copy.waitors = [{ name: 'Mike', age: 32 }];
+	return copy;
+}
 
-// console.log(typeof (NaN));
+console.log(transferWaitors(restorantData));
 
-// const getSum = function (a, b) {
-// 	return a + b;
-// };
-// const result = getSum(5, 6);
-// console.log(result);
-
-// console.log(0 || 1);
-
-// console.log(0 && 1);
-
-// console.log('a' > 'b');
-
-// console.log(0 || NaN || false || null);
-
-// let x = 5; alert(++x);
-
-// console.log([] + false - null + true);
-
-// let y = 1;
-// let x = y = 2;
-// alert(x);
-
-// console.log(typeof([] + 1 + 2));
-
-// alert('1'[0]);
-
-// console.log(2 && 1 && null && 0 && undefined);
-
-// console.log(!! (1 && 2) === (1 && 2));
-
-// alert(null || 2 && 3 || 4);
-
-// const a = [1, 2, 3],
-//    b = [1, 2, 3];
-   
-// console.log(a == b);
-
-// console.log(+'Infinity');
-
-console.log('Їжак' > 'яблуко');
